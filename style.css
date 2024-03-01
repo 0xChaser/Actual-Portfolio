@@ -1,0 +1,607 @@
+:root{
+    --primary-color: #003366;
+    --white-color: #F9F9F9;
+    --grey-color: #E1E1E1;
+}
+
+
+*{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color:var(--primary-color);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px;
+    font-size: 175%;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+header ul:hover{
+    color: var(--primary-color);
+    transition: 0.5s;
+}
+
+.nav_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_container ul {
+    margin: 0 20px;
+    text-decoration: none !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.code{
+    display: flex;
+    align-items: center;
+    font-size: 75px;
+    color: #17A2B8;
+    /* color: var(--primary-color); */
+}
+
+.texte{
+    margin-top: 150px;;
+    color: white;
+}
+
+
+.first_titre{
+    font-size:20px;
+}
+
+.prenom_nom{
+    font-size:80px;
+    font-weight: 1200;
+    margin-top: 10px;
+}
+
+.description_texte{
+    margin-top: 10px;
+    color: #ffffff82;
+    font-size: 18px;
+}
+
+.etudes_texte{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.icones{
+    display: flex;
+    align-items: center;
+}
+
+.icones svg{
+    margin: 15px;
+}
+
+.icones svg:hover{
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+
+
+.container_texte_pp{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.photo_de_profil{
+    margin-top: 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .terminal-loader {
+    border: 0.1em solid #333;
+    background-color: #1a1a1a;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 1.5em 1em;
+    width: 35em;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5em;
+    background-color: #333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+  }
+  
+  .terminal-controls {
+    float: left;
+  }
+  
+  .control {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 0.4em;
+    border-radius: 50%;
+    background-color: #777;
+  }
+  
+  .control.close {
+    background-color: #FF5D50;
+  }
+  
+  .control.minimize {
+    background-color: #FFC60C;
+  }
+  
+  .control.maximize {
+    background-color: #1BD137;
+  }
+  
+  .terminal-title {
+    float: right;
+    line-height: 1.5em;
+    color: #eee;
+  }
+  
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 1.5em;
+
+  }
+  
+  #show-projects{
+    padding: 25px;
+    font-size: 1em;
+    border-radius: 10px;
+    background-color: #505d66;
+    border: 1px solid var(--white-color);
+  }
+
+  #show-projects:hover{
+    cursor: pointer;
+  }
+
+
+    .hide{
+        transition: 5s;
+        opacity: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TEST PROJETS AOS */
+#gitTree {
+    position: relative;
+    width: 100%;
+    max-width: 1750px;
+    padding: 20px;
+  }
+  
+  .center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #000;
+    transform: translateX(-50%);
+  }
+  
+  .project {
+    position: relative;
+    width: 500px;
+    height: 300px; 
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+  }
+    .project.load{
+        opacity: 0.70;
+    }
+
+
+
+  .left {
+    float: left;
+    text-align: right;
+    clear: both;
+  }
+  
+  .right {
+    float: right;
+    text-align: left;
+    clear: both;
+  }
+  
+  .project-content {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    height: 100%; /* Hauteur fixe pour aligner avec la taille du projet */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alignement vertical des éléments */
+  }
+  
+  .image-container {    
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end; /* Aligner le bouton en bas de l'image */
+  }
+  
+
+  .project p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  #gitTree:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.project-content p{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+  
+.project-content p svg{
+    margin-left: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Projets */
+
+.partie_projets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titre_partie{
+    color:var(--white-color);
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20vh;
+}
+
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.nom_projets{
+    color: var(--white-color);
+    text-align: center;
+}
+
+.project {
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.project img {
+    width: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+
+
+.center {
+    z-index: 2;
+}
+
+
+.project.left, .project.right {
+    transform: scale(1);
+    opacity: 0.70;
+}
+
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #232323; /* Couleur des cercles inactifs */
+    display: inline-block;
+}
+
+
+
+.skills {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.skill {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+span {
+    margin-right: 10px;
+    flex-grow: 1;
+    text-align: left; 
+}
+
+#firstSection, #secondSection{
+    background-color: #505d66;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+.titre_competences{
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.vertical_line{
+    height:400px;
+    width: 15px;
+    background-color: #916CDF;
+    border-radius: 10px;
+    margin-top: 75px;
+}
+
+
+@media (min-width: 768px) {
+    
+    header{
+        font-size: 1.5em;
+    }
+
+    .code{
+        font-size: 2em;
+    }
+
+    .project img {
+        width: 350px;
+    }
+    
+}
+
+
+@media (max-width: 767px) {
+
+    header{
+        display: none;
+    }
+
+    .photo_de_profil img{
+        width: 275px;
+    }
+
+    .container_texte_pp{
+        flex-direction: column-reverse;
+    }
+
+
+    .texte{
+        margin-top: 25px;
+        margin-left: 13px;
+    }
+    
+    
+    .first_titre{
+        font-size:15px;
+    }
+    
+    .prenom_nom{
+        font-size:45px;
+        margin-top: 10px;
+    }
+    
+    .description_texte{
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    
+    .etudes_texte{
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    
+    .icones svg{
+        margin: 10px;
+        width: 65%;
+    }
+
+    .cv {
+        margin-top: 10px;
+        padding: 2px;
+        padding-right: 35px;
+        padding-left: 10px;
+        font-size: 15px;
+    }    
+    
+    .fleche_cv {
+        display: inline-block;
+        transform: scaleX(4);
+        margin-left: 35px;
+    }
+
+    .slider-container {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+
+    .project img {
+        width: 275px;
+    }
+
+    .titre_partie{
+        font-size: 35px;
+        margin-top: 20vh;
+    }
+
+
+    .skills {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+
+    #firstSection, #secondSection{
+        background-color: #916CDF;
+        width: 250px;
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        margin-top: 50px;
+    }
+
+    .titre_competences{
+        font-size: 25px;
+    }
+
+}
