@@ -1,116 +1,247 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const projetsLink = document.getElementById("projetsLink");
-    const skillLink = document.getElementById("skillLink");
-
-    projetsLink.addEventListener("click", function() {
-        const projetSection = document.querySelector(".partie_projets");
-        projetSection.scrollIntoView({ behavior: "smooth" });
-    });
-    skillLink.addEventListener("click", function() {
-        const skillSection = document.querySelector(".partie_skills");
-        skillSection.scrollIntoView({ behavior: "smooth" });
-});
-
-});
-
-
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+const nav = document.querySelector(".nav-links");
+document.addEventListener("scroll", () => {
+    if (window.scrollY === 0) {
+        nav.classList.remove("nav-links-filled");
+    } else {
+        nav.classList.add("nav-links-filled");
     }
-    return color;
+});
+
+
+
+function setActiveLink(activeLink) {
+  document.querySelectorAll('.nav-links-item').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  if (activeLink) {
+    activeLink.classList.add('active');
+  }
+}
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    const offset = sectionTop - (window.innerHeight / 2) + (section.offsetHeight / 2);
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+}
+
+document.querySelectorAll('.nav-links-item').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const sectionId = this.getAttribute('data-section');
+    setActiveLink(this);
+    scrollToSection(sectionId);
+  });
+});
+
+window.addEventListener('scroll', () => {
+  let currentSection = '';
+  const middleOfScreen = window.innerHeight / 2 + window.scrollY;
+  const nearBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+
+  document.querySelectorAll('main > div').forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionBottom = sectionTop + sectionHeight;
+
+    if (middleOfScreen > sectionTop && middleOfScreen < sectionBottom) {
+      currentSection = section.id;
+    }
+  });
+
+  if (nearBottom) {
+    currentSection = 'studies';
+  }
+
+  const activeLink = document.querySelector(`.nav-links-item[data-section="${currentSection}"]`);
+  setActiveLink(activeLink);
+});
+
+
+
+document.querySelectorAll('.projects-card').forEach(card => {
+    card.addEventListener('click', function(event) {
+        event.stopPropagation();
+
+        const projectName = this.querySelector('.projects-card-name').textContent;
+        const description = this.querySelector('.projects-card-description').innerHTML;
+        const link = this.querySelector('.projects-card-link').textContent;
+        const languages = Array.from(this.querySelectorAll('.projects-card-languages span')).map(span => span.textContent).join(', ');
+        const imagePath = this.getAttribute('data-image-path');
+
+        const projectDetailsHTML = `
+            <div class="project-details">
+                <img src="${imagePath}" alt="${projectName}">
+                <h3>${projectName}</h3>
+                <p class="tech">${languages}</p>
+                <p class="description">${description}</p><br>
+                <a href="${link}" class="link">${link}</a> 
+            </div>
+        `;
+
+        const detailsContainer = document.getElementById('project-details-container');
+        detailsContainer.innerHTML = projectDetailsHTML;
+        detailsContainer.style.display = 'block';
+    });
+});
+
+document.addEventListener('click', function(event) {
+    const detailsContainer = document.getElementById('project-details-container');
+
+    if (detailsContainer && !detailsContainer.contains(event.target)) {
+        detailsContainer.innerHTML = '';
+        detailsContainer.style.display = 'none'; 
+    }
+});
+
+
+
+
+document.querySelectorAll('.projects-card').forEach(card => {
+    card.addEventListener('mouseenter', (e) => {
+        e.currentTarget.classList.add('hovered');
+    });
+
+    card.addEventListener('mouseleave', (e) => {
+        e.currentTarget.classList.remove('hovered');
+    });
+});
+
+function animateText(elementSelector, text1, text2, speed) {
+  const element = document.querySelector(elementSelector);
+  let isAdding = true;
+  let textToUse = text1;
+  let index = 0;
+
+  function updateText() {
+    setTimeout(() => {
+      if (isAdding) {
+        if (index < textToUse.length) {
+          element.innerHTML = textToUse.slice(0, ++index);
+        } else {
+          isAdding = false;
+          setTimeout(updateText, 1500);
+          return;
+        }
+      } else {
+        if (index > 0) {
+          element.innerHTML = textToUse.slice(0, --index);
+        } else {
+          isAdding = true;
+          textToUse = textToUse === text1 ? text2 : text1;
+          setTimeout(updateText, 500);
+          return;
+        }
+      }
+      updateText();
+    }, isAdding ? speed : speed * 2);
+  }
+
+  updateText();
+}
+
+animateText('.pseudo', 'Chaser', 'Florian', 100);
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const answerDiv = document.querySelector('.chat-answer');
+    const buttons = document.querySelectorAll('.chat-container-buttons button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            switch (this.innerText) {
+                case 'Just saying Hello !':
+                    answerDiv.textContent = 'Hello to you ! Thanks for visiting !';
+                    break;
+                case 'How can I reach out to you ?':
+                    answerDiv.textContent = 'In the footer, you will find all the ways to reach me.';
+                    break;
+                case 'What techstack did you use for this website ?':
+                    answerDiv.textContent = 'This website has been made with HTML, CSS, and Javascript.';
+                    break;
+                default:
+                    answerDiv.textContent = 'Please select a question.';
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var counter = 0;
+  var counterDisplay = document.getElementById('counter');
+
+  function updateCounterDisplay() {
+    counterDisplay.textContent = counter;
+  }
+
+  function atlasOs() {
+    const navL = document.querySelector("nav");
+    const main = document.querySelector("main");
+    const info = document.querySelector(".info-wrapper");
+    const troll = document.querySelector("#troll");
+    
+
+    function fadeElementOut(element) {
+        element.classList.add('fade-out');
+        element.addEventListener('animationend', () => {
+            element.style.display = 'none';
+        });
+    }
+    
+    troll.style.display = 'flex';
+    [navL, main, info].forEach(fadeElementOut);
 }
 
 
+document.getElementById('inputButton').addEventListener('click', function() {
+  var userInput = document.getElementById('userInput').value.toLowerCase();
+  if (userInput === "atlas") {
+    enableCounter(); 
+  }
+});
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM Content Loaded!");
+function enableCounter() {
+  var firstStudiesDiv = document.querySelector('.studies-card');
+  if (firstStudiesDiv) {
+    firstStudiesDiv.addEventListener('click', function() {
+      counter += 1;
+      updateCounterDisplay();
+      if (counter === 418) atlasOs();
+    });
+  }
 
-    const skillsData = {
-        "HTML": 4,
-        "CSS": 4,
-        "JS": 3,
-        "Git": 3,
-        "React": 2,
-        // "Python": 3,
-        "PowerPoint": 4,
-        "Word": 5,
-        "Excel + VBA": 4,
-        "Power-BI": 3,
-        "SharePoint": 4
-    };
+  var postmanDiv = document.getElementById('postman');
+  if (postmanDiv) {
+    postmanDiv.addEventListener('click', function() {
+      counter += 100;
+      updateCounterDisplay();
+      if (counter === 418) atlasOs();
+    });
+  }
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const chatbox = document.querySelector('.chat');
+    const chatboxToggle = document.getElementById('chatbox');
+    const closeButton = document.querySelector('.chat-bar svg');
 
-    const firstSection = document.getElementById("firstSection");
-    const secondSection = document.getElementById("secondSection");
+    chatbox.style.display = 'none';
 
-    const skillsArray = Object.keys(skillsData);
-    const midpoint = Math.ceil(skillsArray.length / 2);
-    skillsArray.forEach((skill, index) => {
-        const skillDiv = document.createElement("div");
-        skillDiv.className = "skill";
-    
-        const label = document.createElement("span");
-        label.innerText = skill;
-        skillDiv.appendChild(label);
-    
-        const randomColor = getRandomColor(); 
-    
-        const circlesContainer = document.createElement("div");
-        for (let i = 1; i <= 5; i++) {
-            const circle = document.createElement("div");
-            circle.className = "circle";
-            if (i <= skillsData[skill]) {
-                circle.classList.add("active");
-                circle.style.backgroundColor = randomColor; 
-            }
-            circlesContainer.appendChild(circle);
-        }
-        skillDiv.appendChild(circlesContainer);
-    
-        if (index < midpoint) {
-            firstSection.appendChild(skillDiv);
-        } else {
-            secondSection.appendChild(skillDiv);
+    chatboxToggle.addEventListener('click', function() {
+        if (chatbox.style.display === 'none') {
+            chatbox.style.display = 'block';
+            chatboxToggle.style.display = 'none';
         }
     });
-    
-    
-});      
 
+    closeButton.addEventListener('click', function() {
+        chatbox.style.display = 'none';
+        chatboxToggle.style.display = 'block';
+    });
+});
 
-
-
-
-// let projects = document.querySelectorAll('.project');
-// let currentIndex = 1; 
-
-// function moveSliderTo(index) {
-//     projects[currentIndex].classList.remove('center');
-//     currentIndex = index;
-//     projects[currentIndex].classList.add('center');
-//     adjustSides();   
-// }
-
-// function adjustSides() {
-//     for (let i = 0; i < projects.length; i++) {
-//         if (i < currentIndex) {
-//             projects[i].classList.remove('right');
-//             projects[i].classList.add('left');
-//         } else if (i > currentIndex) {
-//             projects[i].classList.remove('left');
-//             projects[i].classList.add('right');
-//         }
-//     }
-// }
-
-// adjustSides();
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     projects.forEach((project, index) => {
-//         project.addEventListener('click', function() {
-//             moveSliderTo(index);
-//         });
-//     });
-// });
