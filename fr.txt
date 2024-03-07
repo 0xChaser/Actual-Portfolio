@@ -1,0 +1,71 @@
+Au cours de mes deux années d'alternance chez Enedis, j'ai eu pour but de réaliser un site web nommé "Mon Immersion".
+
+Au sein de la DR Paris, chez Enedis, le service où j'ai réalisé mon alternance, accueille chaque année en moyenne 80 immersions.
+Une immersion est une visite se réalisant sur une journée dans un service de l'entreprise afin d'y découvrir les outils, les activités dans le cadre d'un repèrage pour un futur job ou simplement de découvrir cette activité.
+
+Mr AUGUSTE Williams, mon N+1 a donc eu l'idée de créer un site web permettant de faciliter la gestion des immersiosn dans n'importe quel service de l'entreprise par Direction Régionales (DR).
+
+J'ai donc été missionné de le réaliser tout seul de A à Z au cours de mon contrat. Après de nombreux mois de développement, le site est terminé et la phase d'expérimentation est lancé lors du Trimestre 1 de 2024
+
+Une version de test en affichage utilisateur est accessible via ce lien : https://mon-immersion.flo-isk.fr
+
+*/////// My sport tm8 
+
+
+Pour la fin de ma premiere année de BTS, j'ai eu pour but de réaliser un site web en PHP en liaison avec une base de données.
+
+Après de longues heures de reflexion, j'ai eu l'idée de créer une plateforme qui permettrait à n'importe qu'elle personne qui pratique un sport de trouver un équipier pour y aller.
+Dans l'application, on retrouve de nombreux sport connus.
+L'application a également des fonctionnalités comme l'ajout de commentaire suite à une session d'entrainement avec la personne rencontrée mais également, à la main de l'utilisateur la possibilité d'ajouter un sport.
+
+Ce fut mon premier projet de développement en PHP.
+
+Une version de test en affichage utilisateur est accessible via ce lien : https://projet.flo-isk.fr
+
+
+
+*/////// Starknet OWL
+
+Ce projet a été réalisé suite à ma réponse sur une annonce sur un site de Freelance.
+la demande était de réalisé un site web en React, responsive et avec une connexion à une API externe.
+Le site est basé sur une cryptomonnaie.
+
+Si vous souhaitez visiter le site, il est disponible via ce lien : https://starknet-owl.xyz
+
+
+*/////// Meteor
+
+Ce projet a été réalisé suite à ma réponse sur une annonce sur un site de Freelance.
+la demande était de réalisé un site web en React, responsive et avec des animations de comètes en fond.
+
+Si vous souhaitez visiter le site, il est disponible via ce lien : https://starknet-owl.xyz
+
+
+*/////// Controle d'accès
+
+En terminale, un projet de fin d'anné nous a été donné, le but du projet était de réaliser un système de controle d'accès à l'entrée du lycée.
+Nous étions par groupe de 4, avec des ressources limitées. A la fin de l'année, le projet était finalisé et notre contrôle d'accès fonctionnait.
+Il a été réalisé en langage C via un Arduino ainsi qu'une page web basique en HTML, CSS et un peu de PHP (donné par notre professeur) avec un stockage des données utilisateur sur une base de données MariaDB. 
+
+////////// Hydrolienne
+
+En terminal, un projet de milieu d'année nous a été donné, le but du projet était de réaliser une boîte pour une hydrolienne en 3d sous le logiciel SolidWork.
+
+/// IA notes
+
+
+Ce projet a été réalisé suite à ma réponse sur une annonce sur un site de Freelance.
+la demande était de réalisé un site web en PHP afin de filtrer via des champs des logiciels d'IA selon certain critères.
+
+Si vous souhaitez visiter le site, il est disponible via ce lien : https://logiciels.flo-isk.fr
+
+
+
+///// Portfolio v1
+
+
+Pour le milieu de ma premiere année de BTS, j'ai eu pour but de réaliser un site web en HTML et CSS.
+
+J'ai donc décidé de réaliser un Portfolio me présentant.
+
+Si vous souhaitez visitez l'ancienne version de mon portfolio, il est disponible via ce lien : https://flo-isk.fr/portfolio/v1
