@@ -130,7 +130,7 @@
 
         <div class="projects-wrapper">
 
-            <div class="projects-card" data-image-path="mon-immersion.png" target="_blank">
+            <div class="projects-card" data-image-path="./img/mon-immersion.png" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="projects-card" data-image-path="tm8.png" target="_blank">
+            <div class="projects-card" data-image-path="./img/tm8.png" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -184,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="projects-card" data-image-path="portfolio.png" target="_blank">
+            <div class="projects-card" data-image-path="./img/portfolio.png" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -203,7 +203,7 @@
                 </div>
             </div>
 
-            <div class="projects-card" data-image-path="owl.png"  target="_blank">
+            <div class="projects-card" data-image-path="./img/owl.png"  target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -225,7 +225,7 @@
 
         
 
-            <div class="projects-card" data-image-path="meteor.png" target="_blank">
+            <div class="projects-card" data-image-path="./img/meteor.png" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -246,7 +246,7 @@
 
 
 
-            <div class="projects-card" data-image-path="hydrolienne.jpg" target="_blank">
+            <div class="projects-card" data-image-path="./img/hydrolienne.jpg" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links"></div>
                 <h3 class="projects-card-name"> Tidal Turbine Project</h3>
@@ -259,7 +259,7 @@
                 </div>
             </div>
 
-            <div class="projects-card" data-image-path="ia.png" target="_blank">
+            <div class="projects-card" data-image-path="./img/ia.png" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -282,7 +282,7 @@
 
 
 
-            <div class="projects-card" data-image-path="portfolio_v2.png" target="_blank">
+            <div class="projects-card" data-image-path="./img/portfolio_v2.png" target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -290,7 +290,7 @@
                 <p class="projects-card-description">
                     At the beginning of my second year of BTS, I get the idea to improve my portfolio.<br>
 
-                   Unfortunately, I didn't get enought ideas and stop it at this version.<br><br>
+                Unfortunately, I didn't get enought ideas and stop it at this version.<br><br>
 
                     If you'd like to visit the unfinished version of my portfolio, it's available here:<br>
                 </p>
@@ -302,7 +302,7 @@
                 </div>
             </div>
 
-            <div class="projects-card" data-image-path="controle_acces.jpg"target="_blank">
+            <div class="projects-card" data-image-path="./img/controle_acces.jpg"target="_blank">
                 <div class="projects-card-gardient"></div>
                 <div class="projects-card-links">
                 </div>
@@ -328,7 +328,7 @@
 
 
     </div>
-       
+    
     
 
         
@@ -364,7 +364,6 @@
 
     </div>
 
-
     <footer class="footer">
         <span>© 2024 0xChaser</span>
         <div class="footer-social">
@@ -390,9 +389,7 @@
         </div>
     </footer>
 
-
-
-    <div class="chat" style="opacity: 1; transform: translateY(0px) translateZ(0px);">
+    <div class="chat">
 
         <div class="chat-bar"><span>Chaser Bot</span><span>Ask me a question</span>
             <button>
@@ -403,16 +400,16 @@
         <div class="chat-container">
     
             <div class="chat-container-message">
-                <div class="message bot" style="opacity: 1; transform: translateY(0px) translateZ(0px);">Hi!</div>
-                <div class="message bot" style="opacity: 1; transform: translateY(0px) translateZ(0px);">I'm Chaser Bot, here to assist with any questions about Chaser's work.</div>
-                <div class="message bot" style="opacity: 1; transform: translateY(0px) translateZ(0px);">How can I help you today?</div>
+                <div class="message bot">Hi !</div>
+                <div class="message bot">I'm Chaser Bot, here to assist with any questions about Florian's work.</div>
+                <div class="message bot">How can I help you today ?</div>
     
             </div>
             
             <div class="chat-container-buttons">
-                <button style="opacity: 1; transform: translateY(0px) translateZ(0px);">Just saying Hello!</button>
-                <button style="opacity: 1; transform: translateY(0px) translateZ(0px);">How can I reach out to you?</button>
-                <button style="opacity: 1; transform: translateY(0px) translateZ(0px);">What techstack do you use for this website?</button>
+                <button>Just saying Hello !</button>
+                <button>How can I reach out to you ?</button>
+                <button>What techstack did you use for this website ?</button>
             </div>
 
             <div class="chat-answer"></div>
@@ -429,8 +426,16 @@
     </div>
 
     
+    <button id="chatbox">Chaser Bot </button>
 
 </main>
+
+    <div id="troll">
+        <img src="./img/atlas.png">
+
+        <h2>AtlasOS.exe caused an error, error 41 : <span>Kernel-Power</span></h2>
+        <h3>Thanks to buy a good alimentation</h3>
+    </div>
 
 <script>
     
@@ -651,13 +656,13 @@ document.addEventListener('DOMContentLoaded', function() {
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             switch (this.innerText) {
-                case 'Just saying Hello!':
-                    answerDiv.textContent = 'Hello to you! Thanks for visiting!';
+                case 'Just saying Hello !':
+                    answerDiv.textContent = 'Hello to you ! Thanks for visiting !';
                     break;
-                case 'How can I reach out to you?':
+                case 'How can I reach out to you ?':
                     answerDiv.textContent = 'In the footer, you will find all the ways to reach me.';
                     break;
-                case 'What techstack do you use for this website?':
+                case 'What techstack did you use for this website ?':
                     answerDiv.textContent = 'This website has been made with HTML, CSS, and Javascript.';
                     break;
                 default:
@@ -676,16 +681,32 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function atlasOs() {
-    console.log("Function atlasOs() called");
-  }
+    const navL = document.querySelector("nav");
+    const main = document.querySelector("main");
+    const info = document.querySelector(".info-wrapper");
+    const troll = document.querySelector("#troll");
+    
 
-  document.getElementById('inputButton').addEventListener('click', function() {
-    var userInput = document.getElementById('userInput').value.toLowerCase();
-    if (userInput === "atlas") {
-      updateCounterDisplay(); 
+    function fadeElementOut(element) {
+        element.classList.add('fade-out');
+        element.addEventListener('animationend', () => {
+            element.style.display = 'none';
+        });
     }
-  });
+    
+    troll.style.display = 'flex';
+    [navL, main, info].forEach(fadeElementOut);
+}
 
+
+document.getElementById('inputButton').addEventListener('click', function() {
+  var userInput = document.getElementById('userInput').value.toLowerCase();
+  if (userInput === "atlas") {
+    enableCounter(); 
+  }
+});
+
+function enableCounter() {
   var firstStudiesDiv = document.querySelector('.studies-card');
   if (firstStudiesDiv) {
     firstStudiesDiv.addEventListener('click', function() {
@@ -703,6 +724,26 @@ document.addEventListener('DOMContentLoaded', function () {
       if (counter === 418) atlasOs();
     });
   }
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const chatbox = document.querySelector('.chat');
+    const chatboxToggle = document.getElementById('chatbox');
+    const closeButton = document.querySelector('.chat-bar svg');
+
+    chatbox.style.display = 'none';
+
+    chatboxToggle.addEventListener('click', function() {
+        if (chatbox.style.display === 'none') {
+            chatbox.style.display = 'block';
+            chatboxToggle.style.display = 'none';
+        }
+    });
+
+    closeButton.addEventListener('click', function() {
+        chatbox.style.display = 'none';
+        chatboxToggle.style.display = 'block';
+    });
 });
 
 
