@@ -613,27 +613,3 @@ a {
     }
   }
 
-#troll {    
-display: none;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-}
-
-#troll img{
-    width: 50%;
-}
-
-
-#troll h2{
-    color: var(--color);
-}
-
-#troll h3{
-    margin-top: 150px;
-    color: var(--white-color);
-}
-
-#troll span{
-    font-style: italic;
-}
