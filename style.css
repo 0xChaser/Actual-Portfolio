@@ -222,7 +222,7 @@ nav {
     display: none;
 }
 .project-details {
-    width: 30%;
+    width: 20%;
     position: fixed;
     right: 50px;
     top: 0;
@@ -239,18 +239,18 @@ nav {
 }
 
 .project-details h3{
-    font-size: 35px;
+    font-size: 26px;
     text-align: center;
 }
 
 .project-details .tech{
-    font-size: 15px;
+    font-size: 11px;
     text-align: center;
     font-style: italic;
 }
 
 .project-details .description{
-    font-size: 18px;
+    font-size: 12px;
     margin-top: 30px;
     text-align: left;
 }
@@ -455,13 +455,13 @@ a {
 }
 
 .chat-container {
-    height: 600px;
+    height: 500px;
     padding: 10px;
-    overflow-y: auto;
+    overflow-y: none;
     border-radius: 0 0 10px 10px;
     border: 1px solid #434343;
     border-top: none;
-    width: 450px;
+    width: 500px;
 }
 
 .chat-container-message {
@@ -496,7 +496,7 @@ a {
     letter-spacing: .5px;
     line-height: 1.5;
     padding: 15px;
-    font-size: 15px;
+    font-size: 12px;
     background-color: transparent;
     border-radius: 30px;
     color: var(--color);
@@ -505,25 +505,15 @@ a {
 }
 
 .chat-answer{
-    margin-top: 25px;
+    margin-top: 10px;
     font-weight: 500;
     letter-spacing: normal;
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 15px;
     padding: 12px 14px;
     margin-bottom: 10px;
 }
 
-
-.chat-answer{
-    margin-top: 25px;
-    font-weight: 500;
-    letter-spacing: normal;
-    line-height: 1.5;
-    font-size: 18px;
-    padding: 12px 14px;
-    margin-bottom: 10px;
-}
 
 .chat-input {
     display: flex;
@@ -535,7 +525,7 @@ a {
     font-weight: 500;
     letter-spacing: normal;
     line-height: 1.5;
-    font-size: 15px;
+    font-size: 13px;
     padding: 12px 14px;
     margin-bottom: 10px;
 }
@@ -544,7 +534,7 @@ a {
     font-weight: 500;
     letter-spacing: normal;
     line-height: 1.5;
-    font-size: 15px;
+    font-size: 13px;
     padding: 13px;
     margin-bottom: 10px;
     width: 275px;
@@ -559,7 +549,7 @@ a {
     letter-spacing: .5px;
     line-height: 1.5;
     padding: 15px;
-    font-size: 15px;
+    font-size: 12px;
     background-color: transparent;
     border-radius: 20px;
     color: var(--white-color);
