@@ -413,7 +413,6 @@ a {
 
 
 .chat {
-    right: 0;
     z-index: 1000 !important;
     right: 50px;
     bottom: 50px;
